@@ -1,6 +1,6 @@
 import joblib
 import os
-from sklearn.linear_model import LinearRegression
+from ml_api.CustomModels.linear_regression import LinearRegression
 
 MODEL_PATH="models/linear_regression.pkl"
 

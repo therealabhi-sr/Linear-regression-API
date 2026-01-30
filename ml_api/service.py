@@ -2,12 +2,11 @@ from ml_api.model import create_model,load_model,save_model
 import numpy as np 
 
 def train_model(X,y):
-    X=np.array(X)
-    y=np.array(y)
+    X=np.asarray(X)
+    y=np.asarray(y)
     model=create_model()
-    model.fit(X,y)
+    model.train(X,y)
     save_model(model)
-    return model
 
 def predict(features):
     model=load_model()

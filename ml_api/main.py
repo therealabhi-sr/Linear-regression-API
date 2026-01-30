@@ -7,7 +7,7 @@ app=FastAPI()
 @app.post("/train")
 def train(req:TrainRequest):
     if(len(req.X)!=len(req.y)):
-        raise HTTPException("X and y length not matched")
+        raise HTTPException(status_code=400, detail="X and y length not matched")
     train_model(req.X,req.y)  
     return {"Status":"trained"}
     
